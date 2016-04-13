@@ -10,4 +10,8 @@ public interface Presenter<T extends MvpView> {
     void saveState(Bundle bundle);
 
     void destroy();
+
+    boolean checkAuth();
+
+    void resetAuth();
 }
