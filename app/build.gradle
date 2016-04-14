@@ -22,14 +22,28 @@ android {
 
 dependencies {
 
+    final RETROFIT_VERSION = '2.0.0-beta4'
+    final OKHTTP_VERSION = '3.2.0'
+    final SUPPORT_LIBRARY_VERSION = '23.2.0'
+    final MOCK_WEB_SERVER_VERSION = '3.2.0'
     final DAGGER_VERSION = '2.0.2'
     def daggerCompiler = "com.google.dagger:dagger-compiler:$DAGGER_VERSION"
+
+    compile "com.android.support:design:$SUPPORT_LIBRARY_VERSION"
+
+    testCompile "com.squareup.okhttp3:mockwebserver:$MOCK_WEB_SERVER_VERSION"
+
+    compile "com.squareup.retrofit2:retrofit:$RETROFIT_VERSION"
+    compile "com.squareup.retrofit2:converter-gson:$RETROFIT_VERSION"
+    compile "com.squareup.okhttp3:okhttp:$OKHTTP_VERSION"
+    compile "com.squareup.okhttp3:logging-interceptor:$OKHTTP_VERSION"
 
     compile "com.google.dagger:dagger:$DAGGER_VERSION"
     provided 'javax.annotation:jsr250-api:1.0'
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.3.0'
+
 
     // APT dependencies
     apt daggerCompiler
